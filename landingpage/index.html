@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qaunex Optimizer – Never Overpay Solana Fees</title>
     <style>
+        /* Reset & base */
         * {
             margin: 0;
             padding: 0;
@@ -16,23 +17,57 @@
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.5;
         }
-        /* Logo image */
-        .logo-image {
-            text-align: center;
-            margin: 2rem 0 1rem 0;
+        /* ===== EXACT LOGO FROM YOUR SCSS ===== */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            justify-content: center;
+            margin: 2rem 0 1rem;
         }
-        .logo-image img {
-            max-width: 80%;
-            height: auto;
-            max-height: 150px;
+        .logo:hover {
+            transform: scale(1.02);
+        }
+        .logo-hexagon {
+            width: 2rem;
+            height: 2rem;
+            background: #00bfff;          /* map-get($logo-colors, hexagon-bg) */
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .logo-hexagon::after {
+            content: "X";
+            color: #0B1C2C;               /* map-get($logo-colors, x-element) */
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+        .logo-text {
+            color: #ffffff;               /* map-get($logo-colors, text-primary) */
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            font-weight: bold;
+        }
+        @keyframes x-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        .logo.pulse .logo-hexagon::after {
+            animation: x-pulse 2s ease-in-out infinite;
         }
         @media (max-width: 768px) {
-            .logo-image img {
-                max-width: 90%;
-                max-height: 100px;
+            .logo-text {
+                font-size: 1.25rem;
             }
         }
-        /* Sections */
+        /* ===== End Logo ===== */
+
+        /* All other styles (hero, problem, etc.) remain exactly as before */
         section {
             padding: 4rem 2rem;
             text-align: center;
@@ -134,11 +169,13 @@
     </style>
 </head>
 <body>
-    <!-- Image logo -->
-    <div class="logo-image">
-        <img src="qn.png" alt="Qaunex Optimizer Logo">
+    <!-- Logo – exactly as in your SCSS -->
+    <div class="logo pulse">
+        <div class="logo-hexagon"></div>
+        <span class="logo-text">QAUNEX OPTIMIZER</span>
     </div>
 
+    <!-- Rest of the page (unchanged) -->
     <section class="hero">
         <h1>Stop Overpaying Solana Fees</h1>
         <p>Optimize every transaction in real time and always pay the lowest possible fee — even during congestion.</p>
@@ -182,6 +219,7 @@
 
     <section id="signup-form" class="cta-final">
         <h2>Be among the first users to never overpay again.</h2>
+        <!-- MailerLite embed code (unchanged) -->
         <div id="mlb2-40186443" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40186443">
             <div class="ml-form-align-center">
                 <div class="ml-form-embedWrapper embedForm">
