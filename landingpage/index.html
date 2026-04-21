@@ -22,48 +22,16 @@
             margin: 0 auto;
             padding: 2rem;
         }
-        header {
-            padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        /* Removed the old logo styles – we use an image now */
+        .logo-image {
+            text-align: center;
+            margin-bottom: 2rem;
         }
-        /* Logo */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        .logo:hover {
-            transform: scale(1.02);
-        }
-        .logo-hexagon {
-            width: 2rem;
-            height: 2rem;
-            background: #00bfff;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        .logo-hexagon::after {
-            content: "X";
-            color: #0B1C2C;
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-        .logo-text {
-            color: #ffffff;
-            font-size: 1.5rem;
-            letter-spacing: 0.05em;
-            font-weight: bold;
-        }
-        @media (max-width: 768px) {
-            .logo-text {
-                font-size: 1.25rem;
-            }
+        .logo-image img {
+            max-width: 80%;
+            height: auto;
+            width: auto;
+            max-height: 200px; /* adjust as needed */
         }
         /* Sections */
         section {
@@ -76,7 +44,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
         }
         h2 {
@@ -114,7 +81,7 @@
             border: 1px solid #00bfff;
             color: #00bfff;
         }
-        /* MailerLite form container – override styles to match brand */
+        /* MailerLite form – brand styling */
         #mlb2-40186443 .ml-form-embedWrapper {
             background: #0a1a28 !important;
             border: 1px solid #00bfff !important;
@@ -167,6 +134,7 @@
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
             section { padding: 2rem 1rem; }
+            .logo-image img { max-width: 90%; max-height: 120px; }
         }
     </style>
 </head>
