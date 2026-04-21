@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qaunex Optimizer – Never Overpay Solana Fees</title>
     <style>
-        /* Reset & base */
         * {
             margin: 0;
             padding: 0;
@@ -17,57 +16,23 @@
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.5;
         }
-        /* ===== LOGO (from your SCSS) ===== */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            justify-content: center;
-            margin: 2rem 0 1rem;
+        /* Logo image */
+        .logo-image {
+            text-align: center;
+            margin: 2rem 0 1rem 0;
         }
-        .logo:hover {
-            transform: scale(1.02);
-        }
-        .logo-hexagon {
-            width: 2rem;
-            height: 2rem;
-            background: #00bfff;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        .logo-hexagon::after {
-            content: "X";
-            color: #0B1C2C;
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-        .logo-text {
-            color: #ffffff;
-            font-size: 1.5rem;
-            letter-spacing: 0.05em;
-            font-weight: bold;
-        }
-        @keyframes x-pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.1); }
-        }
-        .logo.pulse .logo-hexagon::after {
-            animation: x-pulse 2s ease-in-out infinite;
+        .logo-image img {
+            max-width: 80%;
+            height: auto;
+            max-height: 150px;
         }
         @media (max-width: 768px) {
-            .logo-text {
-                font-size: 1.25rem;
+            .logo-image img {
+                max-width: 90%;
+                max-height: 100px;
             }
         }
-        /* ===== End Logo ===== */
-
-        /* Other styles (same as before) */
+        /* Sections */
         section {
             padding: 4rem 2rem;
             text-align: center;
@@ -115,7 +80,7 @@
             border: 1px solid #00bfff;
             color: #00bfff;
         }
-        /* MailerLite form styling */
+        /* MailerLite form */
         #mlb2-40186443 .ml-form-embedWrapper {
             background: #0a1a28 !important;
             border: 1px solid #00bfff !important;
@@ -124,9 +89,6 @@
         #mlb2-40186443 .ml-form-embedContent h4,
         #mlb2-40186443 .ml-form-embedContent p {
             color: #ffffff !important;
-        }
-        #mlb2-40186443 .ml-form-embedContent h4 {
-            font-size: 1.5rem !important;
         }
         #mlb2-40186443 input {
             background: rgba(255,255,255,0.1) !important;
@@ -172,10 +134,9 @@
     </style>
 </head>
 <body>
-    <!-- Logo (your original design) -->
-    <div class="logo pulse">
-        <div class="logo-hexagon"></div>
-        <span class="logo-text">QAUNEX OPTIMIZER</span>
+    <!-- Image logo -->
+    <div class="logo-image">
+        <img src="qn.png" alt="Qaunex Optimizer Logo">
     </div>
 
     <section class="hero">
@@ -219,10 +180,8 @@
         <p class="highlight">👉 Multiply this across multiple transactions</p>
     </section>
 
-    <!-- Sign-up form section (MailerLite) -->
     <section id="signup-form" class="cta-final">
         <h2>Be among the first users to never overpay again.</h2>
-        <!-- MailerLite embed code (exactly as you had) -->
         <div id="mlb2-40186443" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40186443">
             <div class="ml-form-align-center">
                 <div class="ml-form-embedWrapper embedForm">
