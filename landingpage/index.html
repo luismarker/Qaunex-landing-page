@@ -4,145 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qaunex Optimizer – Never Overpay Solana Fees</title>
-    <style>
-        /* Reset & base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: #0B1C2C;
-            color: #ffffff;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.5;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        /* Removed the old logo styles – we use an image now */
-        .logo-image {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .logo-image img {
-            max-width: 80%;
-            height: auto;
-            width: auto;
-            max-height: 200px; /* adjust as needed */
-        }
-        /* Sections */
-        section {
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            background: linear-gradient(135deg, #00bfff, #ffffff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        p, li {
-            color: #aaa;
-            font-size: 1.1rem;
-        }
-        .highlight {
-            color: #00bfff;
-            font-weight: bold;
-        }
-        ul {
-            list-style: none;
-            max-width: 600px;
-            margin: 1rem auto;
-        }
-        li {
-            margin: 0.5rem 0;
-        }
-        .comparison {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1rem 0;
-        }
-        .default, .optimized {
-            background: rgba(255,255,255,0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-        }
-        .optimized {
-            border: 1px solid #00bfff;
-            color: #00bfff;
-        }
-        /* MailerLite form – brand styling */
-        #mlb2-40186443 .ml-form-embedWrapper {
-            background: #0a1a28 !important;
-            border: 1px solid #00bfff !important;
-            border-radius: 16px !important;
-        }
-        #mlb2-40186443 .ml-form-embedContent h4,
-        #mlb2-40186443 .ml-form-embedContent p {
-            color: #ffffff !important;
-        }
-        #mlb2-40186443 .ml-form-embedContent h4 {
-            font-size: 1.5rem !important;
-        }
-        #mlb2-40186443 input {
-            background: rgba(255,255,255,0.1) !important;
-            border: 1px solid #00bfff !important;
-            color: white !important;
-        }
-        #mlb2-40186443 button {
-            background: #00bfff !important;
-            border: none !important;
-            font-weight: bold !important;
-        }
-        #mlb2-40186443 button:hover {
-            background: #0099cc !important;
-        }
-        .cta {
-            background: #00bfff;
-            border: none;
-            color: #0B1C2C;
-            font-weight: bold;
-            padding: 0.8rem 2rem;
-            border-radius: 40px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.2s;
-            margin-top: 1rem;
-        }
-        .cta:hover {
-            background: #0099cc;
-            transform: scale(1.02);
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
-            section { padding: 2rem 1rem; }
-            .logo-image img { max-width: 90%; max-height: 120px; }
-        }
-    </style>
+    <div class="css-logo">
+    <div class="logo-x-left"></div>
+    <div class="logo-x-right"></div>
+    <div class="logo-x-glow"></div>
+    <div class="logo-glow-text">QAUNEX</div>
+</div>
+
+<style>
+/* CSS-Only Logo Styles */
+.css-logo {
+    --logo-color-start: #00bfff;  /* Your brand's cyan color */
+    --logo-color-end: #0099cc;    /* A darker shade for depth */
+    --logo-glow: rgba(0, 191, 255, 0.5);
+    --logo-size: 120px;           /* Adjust the size here */
+    --logo-thickness: 12px;       /* Adjust the thickness of the X */
+    --animation-duration: 1.5s;
+    --easing: cubic-bezier(0.34, 1.2, 0.64, 1);
+
+    position: relative;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    margin: 0 auto;               /* Center the logo */
+    filter: drop-shadow(0 0 10px var(--logo-glow));
+    animation: logoFadeIn var(--animation-duration) var(--easing);
+}
+
+/* The left arm of the X */
+.logo-x-left {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: var(--logo-thickness);
+    height: 100%;
+    background: linear-gradient(135deg, var(--logo-color-start), var(--logo-color-end));
+    transform: translateX(-50%) rotate(45deg);
+    border-radius: 2px;
+}
+
+/* The right arm of the X */
+.logo-x-right {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: var(--logo-thickness);
+    height: 100%;
+    background: linear-gradient(135deg, var(--logo-color-start), var(--logo-color-end));
+    transform: translateX(-50%) rotate(-45deg);
+    border-radius: 2px;
+}
+
+/* The pulsing glow effect */
+.logo-x-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--logo-glow) 0%, rgba(0,0,0,0) 70%);
+    opacity: 0;
+    border-radius: 50%;
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* The QAUNEX text */
+.logo-glow-text {
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, var(--logo-color-start), white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0,191,255,0.3);
+    opacity: 0;
+    animation: textFadeIn 0.6s ease-out 0.4s forwards;
+}
+
+/* Animations */
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(-15deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+/* Optional: Make the X slightly interactive on hover */
+.css-logo:hover .logo-x-left,
+.css-logo:hover .logo-x-right {
+    filter: brightness(1.2);
+    transition: filter 0.2s ease;
+}
+.css-logo:hover .logo-glow-text {
+    text-shadow: 0 0 8px rgba(0,191,255,0.6);
+    transition: text-shadow 0.2s ease;
+}
+</style>
 </head>
 <body>
-    <div class="logo-image">
-        <img src="qx001.png" alt="Qaunex Optimizer Logo">
-    </div>
-
     <section class="hero">
         <h1>Stop Overpaying Solana Fees</h1>
         <p>Optimize every transaction in real time and always pay the lowest possible fee — even during congestion.</p>
