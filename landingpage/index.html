@@ -22,44 +22,61 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-weight: bold;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-weight: 700;
             text-decoration: none;
             transition: all 0.2s ease;
             justify-content: center;
             margin: 2rem 0 1rem;
         }
+
         .logo:hover {
             transform: scale(1.02);
         }
+
         .logo-hexagon {
             width: 2rem;
             height: 2rem;
-            background: #00bfff;          /* map-get($logo-colors, hexagon-bg) */
+            background: #00bfff;
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
         }
+
         .logo-hexagon::after {
             content: "X";
-            color: #0B1C2C;               /* map-get($logo-colors, x-element) */
+            color: #0B1C2C;
             font-weight: 800;
             font-size: 1.1rem;
         }
+
+        /* Text */
         .logo-text {
-            color: #ffffff;               /* map-get($logo-colors, text-primary) */
+            color: #ffffff;
             font-size: 1.5rem;
             letter-spacing: 0.05em;
-            font-weight: bold;
+            font-weight: 700;
         }
+
+        /* Animation */
         @keyframes x-pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.1); }
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+               transform: scale(1.1);
+            }
         }
+
         .logo.pulse .logo-hexagon::after {
             animation: x-pulse 2s ease-in-out infinite;
         }
+
+        /* Mobile */
         @media (max-width: 768px) {
             .logo-text {
                 font-size: 1.25rem;
