@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qaunex Optimizer – Never Overpay Solana Fees</title>
+    <style>
+        /* Reset & base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #0B1C2C;
+            color: #ffffff;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .logo:hover {
+            transform: scale(1.02);
+        }
+        .logo-hexagon {
+            width: 2rem;
+            height: 2rem;
+            background: #00bfff;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .logo-hexagon::after {
+            content: "X";
+            color: #0B1C2C;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+        .logo-text {
+            color: #ffffff;
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.25rem;
+            }
+        }
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #00bfff, #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p, li {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+        .highlight {
+            color: #00bfff;
+            font-weight: bold;
+        }
+        ul {
+            list-style: none;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+        li {
+            margin: 0.5rem 0;
+        }
+        .comparison {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        .default, .optimized {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        .optimized {
+            border: 1px solid #00bfff;
+            color: #00bfff;
+        }
+        /* MailerLite form container – override styles to match brand */
+        #mlb2-40186443 .ml-form-embedWrapper {
+            background: #0a1a28 !important;
+            border: 1px solid #00bfff !important;
+            border-radius: 16px !important;
+        }
+        #mlb2-40186443 .ml-form-embedContent h4,
+        #mlb2-40186443 .ml-form-embedContent p {
+            color: #ffffff !important;
+        }
+        #mlb2-40186443 .ml-form-embedContent h4 {
+            font-size: 1.5rem !important;
+        }
+        #mlb2-40186443 input {
+            background: rgba(255,255,255,0.1) !important;
+            border: 1px solid #00bfff !important;
+            color: white !important;
+        }
+        #mlb2-40186443 button {
+            background: #00bfff !important;
+            border: none !important;
+            font-weight: bold !important;
+        }
+        #mlb2-40186443 button:hover {
+            background: #0099cc !important;
+        }
+        .cta {
+            background: #00bfff;
+            border: none;
+            color: #0B1C2C;
+            font-weight: bold;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 1rem;
+        }
+        .cta:hover {
+            background: #0099cc;
+            transform: scale(1.02);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            section { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-hexagon"></div>
+            <span class="logo-text">QAUNEX OPTIMIZER</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Stop Overpaying Solana Fees</h1>
+        <p>Optimize every transaction in real time and always pay the lowest possible fee — even during congestion.</p>
+        <button class="cta" onclick="document.getElementById('signup-form').scrollIntoView({behavior: 'smooth'});">Join Early Access</button>
+    </section>
+
+    <section class="problem">
+        <h2>Solana fees are cheap — until they spike.</h2>
+        <p>During high demand: users unknowingly overpay, fees become unpredictable, there’s no simple way to optimize.</p>
+        <p class="highlight">👉 Same transaction, different users → different costs</p>
+    </section>
+
+    <section class="solution">
+        <h2>We optimize your transaction before it’s sent.</h2>
+        <ul>
+            <li>Analyze real-time network conditions</li>
+            <li>Recommend the optimal fee</li>
+            <li>Reduce unnecessary overpayment</li>
+        </ul>
+    </section>
+
+    <section class="rewards">
+        <h2>Optimize smarter — and get rewarded.</h2>
+        <ul>
+            <li>Earn credits every time you optimize a transaction</li>
+            <li>Use credits to reduce future transaction costs</li>
+            <li>The more you optimize, the more you save</li>
+        </ul>
+        <p class="highlight">👉 Smarter transactions pay you back</p>
+    </section>
+
+    <section class="proof">
+        <h2>Example during congestion:</h2>
+        <div class="comparison">
+            <div class="default">Default fee: $0.15</div>
+            <div class="optimized">Optimized fee: $0.04</div>
+        </div>
+        <p>Savings: 70%</p>
+        <p class="highlight">👉 Multiply this across multiple transactions</p>
+    </section>
+
+    <!-- Sign-up form section -->
+    <section id="signup-form" class="cta-final">
+        <h2>Be among the first users to never overpay again.</h2>
+        <!-- MailerLite embed code (exactly as provided, but with improved styling) -->
+        <div id="mlb2-40186443" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40186443">
+            <div class="ml-form-align-center">
+                <div class="ml-form-embedWrapper embedForm">
+                    <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                        <div class="ml-form-embedContent">
+                            <h4>Qaunex Optimizer</h4>
+                            <p>Be among the first users to never overpay again.</p>
+                        </div>
+                        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2281601/forms/185304967482967106/subscribe" data-code="" method="post" target="_blank">
+                            <div class="ml-form-formContent">
+                                <div class="ml-form-fieldRow ml-last-item">
+                                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                        <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="ml-submit" value="1">
+                            <div class="ml-form-embedSubmit">
+                                <button type="submit" class="primary">Subscribe</button>
+                                <button disabled="disabled" style="display: none;" type="button" class="loading">
+                                    <div class="ml-form-embedSubmitLoad"></div>
+                                    <span class="sr-only">Loading...</span>
+                                </button>
+                            </div>
+                            <input type="hidden" name="anticsrf" value="true">
+                        </form>
+                    </div>
+                    <div class="ml-form-successBody row-success" style="display: none">
+                        <div class="ml-form-successContent">
+                            <h4>Thank you!</h4>
+                            <p>You have successfully joined our subscriber list.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function ml_webform_success_40186443() {
+                var $ = ml_jQuery || jQuery;
+                $('.ml-subscribe-form-40186443 .row-success').show();
+                $('.ml-subscribe-form-40186443 .row-form').hide();
+            }
+        </script>
+        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+        <script>
+            fetch("https://assets.mailerlite.com/jsonp/2281601/forms/185304967482967106/takel")
+        </script>
+    </section>
+
+    <footer>
+        <p>© 2026 Qaunex Optimizer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
